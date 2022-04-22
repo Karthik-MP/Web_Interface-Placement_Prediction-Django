@@ -1,0 +1,79 @@
+{% extends 'authenticate/base.html' %}
+
+{% block content %}
+<div class="col-md-6 offset-md-3">
+    <form method="POST" action="{% url 'results' %}">
+        {% csrf_token %}
+        <div class="border rounded mx-3 my-3 px-3">
+            <h4 class="mt-4 text-center mb-4">Enter your Education details</h4>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col">
+                        <label class="form-label">Enter the sex</label>
+                        <select class="form-control" name="Gender" required>
+                            <option value="M">Male</option>
+                            <option value="F">Female</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Age</label>
+                        <input name="Age" type="text" class="form-control" required />
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col">
+                        <label class="form-label">History Of Backlogs </label>
+                        <select class="form-control" name='HistoryOfBacklogs' required>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Certification</label>
+                        <select class="form-control" name='Certification' required>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col">
+                            <label class="form-label">Degree CGPA</label>
+                            <input name='CGPA' type="text" class="form-control" required />
+                        </div>
+                        <div class="col">
+                            <label class="form-label">Stream</label>
+                            <select class="form-control" name='Stream' required>
+                                <option value="Computer Science">CSE</option>
+                                <option value="Information Technology">IT</option>
+                                <option value="Electronics And Communication">EC</option>
+                                <option value="Mechanical">MECH</option>
+                                <option value="Civil">CIVIL</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Number of Internships</label>
+                        <select class="form-control" name='Internships' required>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </div>
+                    <div class="text-center mt-4 mb-1">
+                        <button type='submit' name='submitButton' class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </div>
+    </form>
+</div>
+
+{% endblock %}

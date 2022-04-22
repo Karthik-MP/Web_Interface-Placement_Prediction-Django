@@ -1,0 +1,21 @@
+{% extends 'authenticate/base.html' %}
+{% block content %}
+<body>
+    <h1 class="text-center">Predictions</h1>
+    <table class="table table-dark table-striped">
+        {% for i,y in lst.items %}
+          <tbody>
+            <tr>
+              <th scope="row">{{ i }} </th>
+              <th scope="row">{{ y }}</th>
+            </tr>
+            {% endfor %}
+    </table>
+    <h3 class="text-center">{% ifequal ans "Oops! You are not eligible to be placed" %}
+      {{ans}} due to {% for i in reslst %} {{i}} {% endfor %}Try harder!
+      {% else %}
+      {{ans}}</h3>
+      
+      {% endifequal %}
+</body>
+{% endblock %}
